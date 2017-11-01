@@ -7,6 +7,7 @@ library(dplyr)
 library(tidyr)
 library(shinyjs)
 
+
 appCSS <- "
 #loading-content {
   position: absolute;
@@ -1404,9 +1405,10 @@ server <- function(input, output, session){
   dat <- dat%>%mutate(distanceToUpper = target.start.num.y - target.start.num.x)
   
   p <- suppressWarnings(ggplot() +
-    geom_point(data = dat, aes(x = protospacer.distance.num, y = distanceToUpper))+
-    # ggtitle(label = plot.title1, subtitle = plot.subtitle) +
-    labs(x=paste("Distance from the priming protospacer to protospacer number", lower.num),y=paste("Distanec from protospacer number", lower.num, "to protospacer number", upper.num)) +
+    geom_point(data = dat, aes(x = protospacer.distance.num, y = distanceToUpper), alpha = 0.3)+
+    ggtitle(label = paste("Comparison of the distance from the priming protospacer to protospacer", lower.num, "and the distance from protospacer number", lower.num, "to protospacer number", upper.num
+                          ), subtitle = paste("Number of points:", nrow(dat))) +
+    labs(x=paste("Distance from the priming protospacer to protospacer number", lower.num),y=paste("Distance from protospacer number", lower.num, "to protospacer number", upper.num)) +
       coord_cartesian(ylim = c(-input$relativePlotRange, input$relativePlotRange),
                       xlim = c(-input$relativePlotRange, input$relativePlotRange)) +
       theme_bw() +
