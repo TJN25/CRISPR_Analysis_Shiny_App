@@ -1,0 +1,12 @@
+name: crispr_analysis_shiny_app
+title:
+username:
+account: thomas-nicholson-genetics-otago
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 230723
+bundleId: 1052852
+url: https://thomas-nicholson-genetics-otago.shinyapps.io/crispr_analysis_shiny_app/
+when: 1509426206.8407
+asMultiple: FALSE
+asStatic: FALSE
